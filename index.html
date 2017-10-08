@@ -5,8 +5,12 @@
     <title>Hangman</title>
     <!-- viewport tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--  link to reset css sheet: -->
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+   <!--  link to bootstrap: -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--link to the javascript file -->
+    <script type="./assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -21,6 +25,7 @@
 <style type="text/css">
     img {width: 100%;}
 </style>
+
 <!-- Main container contains everything -->
 <div class="container">
     	
@@ -31,18 +36,17 @@
             </div>
         </div>
 
-<!-- Main Row, QA and Image. -->
+<!-- Main Row for QA and Image. -->
             <div class="row">
    <!--  QA panel/column -->
                 <div class="panel panel-default col-md-5">
                     <!-- question -->
-                    <div class="panel-body">
-                        <p>Question: </p>
-                        <p id="question"></p>
+                    <div class="panel-body" id="question">
+                        Question
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="answer">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </li>
+                        <li class="list-group-item" id="answer">_ _ _ _ _ _ _ _ _ _ _ _ </li>
                     </ul>
                 </div>
     <!-- Image panel/column -->
@@ -59,7 +63,7 @@
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="remaining">10</li>
+                        <li class="list-group-item text-center" id="remaining">10</li>
                     </ul>
                 </div>
 				<!-- Letter Selected Panel -->
@@ -69,33 +73,34 @@
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="Guessed">G</li>
+                        <li class="list-group-item text-center" id="Guessed">G</li>
                     </ul>
                 </div>
 
-            <div class="panel panel-default col-md-">
+            <div class="panel panel-default col-md-2">
                     <div class="panel-body">
                         <p>Games Won:</p>
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="wins">G</li>
+                        <li class="list-group-item text-center" id="wins">0</li>
                     </ul>
                 </div>
 
-                  <div class="panel panel-default col-md-">
+                  <div class="panel panel-default col-md-2 fixed-bottom">
                     <div class="panel-body">
                         <p>Games Lost:</p>
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="losses">G</li>
+                        <li class="list-group-item text-center" id="losses">0</li>
                     </ul>
                 </div>
 
             </div>
         </div>
-        <script type="./assets/javascript/game.js"></script>
+
+
 </body>
 
 </html>
