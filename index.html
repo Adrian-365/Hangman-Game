@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Hangman</title>
-	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-</head>
-<body>
 
-<!-- //divs
+<head>
+    <title>Hangman</title>
+    <!-- viewport tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <!-- //divs
 	//title
 	//question and answer / press any key
 	//picture
 	//letter selected 
 	//guesses remaining
 	//letters to select?? -->
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron col-md-12">
+            HANGMAN
+        	</div>
+            
+            <div class="row">
+               <div class="panel panel-default col-md-5">
+  <!-- Default panel contents -->
+    <div class="panel-body">
+    <p>...</p>
+  </div>
 
-<div id="wrapper">
-
-<div class="row">
-	<div class="jumbotron col-md-12">HANGMAN</div>	
-
-<style type="text/css">	
-	img: {class: "image-responsive thumbnail"}
-</style>
-
-<div class="row">
-	<div id="qA" class="col-md-7">qA</div>
-	<aside id="graphic" class=" img-container col-md-5"><img class="image-responsive thumbnail" src="./assets/images/hmmm.jpg"></aside>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
 </div>
 
-<div class="row">
-	<div id = "remaining" class="col-md-4">remaining</div>
-	<div id="guessed" class="col-md-4">guessed</div>
-	<div id="winLoss" class="col-md-4">wins losses</div>
-</div>
+                <aside id="graphic" class=" img-container col-md-7">
+					<style type="text/css">
+						img { width: 100%;}
+					</style>
+                	
+                	<img src="./assets/images/hmmm.jpg">
 
+                </aside>
+            </div>
+            <div class="row">
+                <div id="remaining" class="col-md-4">remaining</div>
+                <div id="guessed" class="col-md-4">guessed</div>
+                <div id="winLoss" class="col-md-4">
 
-</div>
-
-<script type="./assets/javascript/game.js"></script>
-	
+                Wins losses
+            	</div>
+            </div>
+      </div>
+        <script type="./assets/javascript/game.js"></script>
 </body>
+
 </html>
