@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-
 <body>
     <!-- //divs
 	//title
@@ -18,47 +17,84 @@
 	//letter selected 
 	//guesses remaining
 	//letters to select?? -->
-    <div class="container">
+<!-- A smidge of css to make the changing images dynamic -->
+<style type="text/css">
+    img {width: 100%;}
+</style>
+<!-- Main container contains everything -->
+<div class="container">
+    	
+<!-- Header Row-->
         <div class="row">
             <div class="jumbotron col-md-12">
-            HANGMAN
-        	</div>
-            
+                <h1 class="text-center">HANGMAN</h1>
+            </div>
+        </div>
+
+<!-- Main Row, QA and Image. -->
             <div class="row">
-               <div class="panel panel-default col-md-5">
-  <!-- Default panel contents -->
-    <div class="panel-body">
-    <p>...</p>
-  </div>
-
-  <!-- List group -->
-  <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>
-
+   <!--  QA panel/column -->
+                <div class="panel panel-default col-md-5">
+                    <!-- question -->
+                    <div class="panel-body">
+                        <p>Question: </p>
+                        <p id="question"></p>
+                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" id="answer">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </li>
+                    </ul>
+                </div>
+    <!-- Image panel/column -->
                 <aside id="graphic" class=" img-container col-md-7">
-					<style type="text/css">
-						img { width: 100%;}
-					</style>
-                	
-                	<img src="./assets/images/hmmm.jpg">
-
+                    <img src="./assets/images/hmmm.jpg">
                 </aside>
             </div>
+   <!-- Bottom Row.  Remaining Guesses, Letter guessed, and wins and losses. -->
             <div class="row">
-                <div id="remaining" class="col-md-4">remaining</div>
-                <div id="guessed" class="col-md-4">guessed</div>
-                <div id="winLoss" class="col-md-4">
+            	<!-- Remaining Guesses Panel -->
+                <div class="panel panel-default col-md-4">
+                    <div class="panel-body">
+                        <p>Remaining Guesses: </p>
+                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" id="remaining">10</li>
+                    </ul>
+                </div>
+				<!-- Letter Selected Panel -->
+                <div class="panel panel-default col-md-4">
+                    <div class="panel-body">
+                        <p>Letter Guessed:</p>
+                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" id="Guessed">G</li>
+                    </ul>
+                </div>
 
-                Wins losses
-            	</div>
+            <div class="panel panel-default col-md-">
+                    <div class="panel-body">
+                        <p>Games Won:</p>
+                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" id="wins">G</li>
+                    </ul>
+                </div>
+
+                  <div class="panel panel-default col-md-">
+                    <div class="panel-body">
+                        <p>Games Lost:</p>
+                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" id="losses">G</li>
+                    </ul>
+                </div>
+
             </div>
-      </div>
+        </div>
         <script type="./assets/javascript/game.js"></script>
 </body>
 
