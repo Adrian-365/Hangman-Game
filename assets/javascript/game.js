@@ -7,11 +7,11 @@ $(document).ready(function() {
 var qs = {
 	question: [
 	'Press Any Key to Play!', 
-	'QUESTION: In which country were many of the "Spaghetti Western" films created?',
-	'QUESTION: In 1966’s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
-	'QUESTION: In "For a Few Dollars More" Lee Van Cleef’s character was known as The Man In: what?',
-	'QUESTION: To this day, who is the biggest bad-ass in the Sphagetti Western world?',
-	'Wanna go again, hombre?'	],
+	'Q: In which country were many of the "Spaghetti Western" films created?',
+	'Q: In 1966’s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
+	'Q: In "For a Few Dollars More" Lee Van Cleef’s character was known as The Man In: what?',
+	'Q: To this day, who is the biggest bad-ass in the Sphagetti Western world?',
+	'You Lost, hombre. Wanna go again?'	],
 
 	answer: [
 	['_'],
@@ -100,6 +100,8 @@ document.onkeyup = function() {
 			if (remain === 0) {
 			losses++;
 			$('#losses').html(losses);
+			$('#question').html(qs.question[qs.question.length-1])
+			$("#answer").html('Hit any key to try the next question.  Or use F5 to reset.');
 			}
 
     	}
@@ -127,10 +129,7 @@ document.onkeyup = function() {
 
 
 // If guesses remaining = 0 then you lose.
-if(remaining = 0) {
-	$("#answer").html("<h1>You Lose !!<h1>");
-	$("#graphic").html("<img scr = './assets/images/youLose'>");
-	}
+
 
 
 // questions and answers, arranged as objects with the answer being an array.  

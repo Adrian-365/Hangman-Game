@@ -35,29 +35,33 @@
 <div class="container">
     	
 <!-- Header Row-->
-        <div class="row">
-            <div class="jumbotron col-md-12 text-center">
-                <h2>HANGMAN</h2>
+        <!-- <div class="row col-md-12"> -->
+            <div class="jumbotron">
+                <h2 class="text-center">HANGMAN</h2>
             </div>
-        </div>
+        <!-- </div> -->
 
 <!-- Main Row for QA and Image. -->
             <div class="row">
 <!--  QA panel/column -->
-                <div class="panel panel-default col-md-5">
+            <div class="col-md-5">
+                <div class="panel panel-primary">
                     <!-- question -->
-                    <div class="panel-body">
+                    <div class="panel-heading">
                     	<h3 id="question"></h3>
-                    </div>
+                	</div>
 <!-- Answer -->
-                    <ul class="list-group">
-                    	<li class= "list-group-item"><h3>ANSWER:</h3></li>
-                        <li class="list-group-item inline" id="answer"></li>
-                    </ul>
+                    <div class="panel-body">
+                    	<h3>ANSWER:</h3>
+                        <h3 id="answer"></h3>
+                    </div>
                 </div>
+            </div>
 
 <!-- Image panel/column -->
-                <aside id="graphic" class="img-container thumbnail col-md-7">
+
+                <aside class="col-md-7">
+                	<div id="graphic" class="img-container thumbnail"></div>
                     
                 </aside>
             </div>
@@ -65,45 +69,53 @@
 <!-- Bottom Row.  Remaining Guesses, Letter guessed, and wins and losses. -->
             <div class="row">
             	<!-- Remaining Guesses Panel -->
-                <div class="panel panel-default col-md-4">
-                    <div class="panel-body">
+            <div class="col-md-4">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
                         <p>Fatal Mistakes Remaining: </p>
                     </div>
                     <!-- List group -->
-                    <ul class="list-group">
-                        <li class="list-group-item text-center" id="remaining"></li>
+                    <ul class="panel-body">
+                        <li class="text-center" id="remaining"></li>
                     </ul>
                 </div>
+            </div>
 <!-- Letter Selected Panel -->
-                <div class="panel panel-default col-md-4">
-                    <div class="panel-body">
+			<div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
                         <p>Last Letter Guessed:</p>
                     </div>
 <!-- Letter Guessed -->
-                    <ul class="list-group">
-                        <li class="list-group-item text-center" id="guessed"></li>
+                    <ul class="panel-body">
+                        <li class="text-center" id="guessed"></li>
                     </ul>
                 </div>
+            </div>
 <!-- Wins -->
-            <div class="panel panel-default col-md-2">
-                    <div class="panel-body">
+<div class="col-md-2">
+            <div class="panel panel-success">
+                    <div class="panel-heading text-center">
                         <p>Games Won:</p>
                     </div>
                    
-                    <ul class="list-group">
-                        <li class="list-group-item text-center" id="wins"></li>
-                    </ul>
+                    <div class="panel-body text-center">
+                        <p id="wins"></p>
+                    </div>
                 </div>
+</div>
 <!-- Losses -->
-                  <div class="panel panel-default col-md-2 fixed-bottom">
-                    <div class="panel-body">
+<div class="col-md-2">
+                  <div class="panel panel-danger fixed-bottom">
+                    <div class="panel-heading text-center">
                         <p>Games Lost:</p>
                     </div>
                     
-                    <ul class="list-group">
-                        <li class="list-group-item text-center" id="losses"></li>
-                    </ul>
+                    <div class="panel-body text-center">
+                        <p id="losses"></p>
+                    </div>
                 </div>
+</div>
 
             </div>
         </div>
