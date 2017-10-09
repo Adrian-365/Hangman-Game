@@ -7,10 +7,10 @@ $(document).ready(function() {
 var qs = {
 	question: [
 	'Press Any Key to Play!', 
-	'Q: In which country were many of the "Spaghetti Western" films created?',
+	'Q: In which country were the "Spaghetti Western" films created?',
 	'Q: In 1966’s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
-	'Q: In "For a Few Dollars More" Lee Van Cleef’s character was known as The Man In: what?',
-	'Q: To this day, who is the biggest bad-ass in the Sphagetti Western world?',
+	'Q: In "For a Few Dollars More" Lee Van Cleef’s character was known as The Man In: ____?',
+	'Q: To this day, who is the biggest bad-ass actor in the Sphagetti Western world?',
 	'You Lost, hombre. Wanna go again?'	],
 
 	answer: [
