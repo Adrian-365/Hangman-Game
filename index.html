@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Hangman</title>
+    <title>Hangman-Game</title>
     <!-- viewport tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!--  link to reset css sheet: -->
@@ -26,7 +26,9 @@
 	//letters to select?? -->
 <!-- A smidge of css to make the changing images dynamic -->
 <style type="text/css">
-    img {width: 100%;}
+    img {min-width: 75%;
+    	max-height: 400px;}
+    .inline {display: inline-block;}
 </style>
 
 <!-- Main container contains everything -->
@@ -34,30 +36,33 @@
     	
 <!-- Header Row-->
         <div class="row">
-            <div class="jumbotron col-md-12">
-                <h1 class="text-center">HANGMAN</h1>
+            <div class="jumbotron col-md-12 text-center">
+                <h2>HANGMAN</h2>
             </div>
         </div>
 
 <!-- Main Row for QA and Image. -->
             <div class="row">
-   <!--  QA panel/column -->
+<!--  QA panel/column -->
                 <div class="panel panel-default col-md-5">
                     <!-- question -->
-                    <div class="panel-body" id="question">
-                        
+                    <div class="panel-body">
+                    	<h3 id="question"></h3>
                     </div>
-                    <!-- List group -->
+<!-- Answer -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="answer"></li>
+                    	<li class= "list-group-item"><h3>ANSWER:</h3></li>
+                        <li class="list-group-item inline" id="answer"></li>
                     </ul>
                 </div>
-    <!-- Image panel/column -->
+
+<!-- Image panel/column -->
                 <aside id="graphic" class="img-container thumbnail col-md-7">
                     
                 </aside>
             </div>
-   <!-- Bottom Row.  Remaining Guesses, Letter guessed, and wins and losses. -->
+
+<!-- Bottom Row.  Remaining Guesses, Letter guessed, and wins and losses. -->
             <div class="row">
             	<!-- Remaining Guesses Panel -->
                 <div class="panel panel-default col-md-4">
@@ -69,32 +74,32 @@
                         <li class="list-group-item text-center" id="remaining"></li>
                     </ul>
                 </div>
-				<!-- Letter Selected Panel -->
+<!-- Letter Selected Panel -->
                 <div class="panel panel-default col-md-4">
                     <div class="panel-body">
                         <p>Last Letter Guessed:</p>
                     </div>
-                    <!-- List group -->
+<!-- Letter Guessed -->
                     <ul class="list-group">
                         <li class="list-group-item text-center" id="guessed"></li>
                     </ul>
                 </div>
-
+<!-- Wins -->
             <div class="panel panel-default col-md-2">
                     <div class="panel-body">
                         <p>Games Won:</p>
                     </div>
-                    <!-- List group -->
+                   
                     <ul class="list-group">
                         <li class="list-group-item text-center" id="wins"></li>
                     </ul>
                 </div>
-
+<!-- Losses -->
                   <div class="panel panel-default col-md-2 fixed-bottom">
                     <div class="panel-body">
                         <p>Games Lost:</p>
                     </div>
-                    <!-- List group -->
+                    
                     <ul class="list-group">
                         <li class="list-group-item text-center" id="losses"></li>
                     </ul>

@@ -7,27 +7,35 @@ $(document).ready(function() {
 var qs = {
 	question: [
 	'Press Any Key to Play!', 
-	'In which country were many of the "Sphagetti Westerns" filmed?',
-	'In 1966’s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
-	'In "For a Few Dollars More" Lee Van Cleef was known as The Man In: what?',
-	'To this day, who is the biggest bad-ass in the Sphagetti Western world?',
-	'Wanna go again?'	],
+	'QUESTION: In which country were many of the "Spaghetti Western" films created?',
+	'QUESTION: In 1966’s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
+	'QUESTION: In "For a Few Dollars More" Lee Van Cleef’s character was known as The Man In: what?',
+	'QUESTION: To this day, who is the biggest bad-ass in the Sphagetti Western world?',
+	'Wanna go again, hombre?'	],
 
 	answer: [
-	["_"],
+	['_'],
 	['I', 'T', 'A', 'L', 'Y'],
 	['C', 'O', 'F', 'F', 'I', 'N'],
 	['B', 'L', 'A', 'C', 'K']
 	['E', 'A', 'S', 'T', 'W', 'O', 'O', 'D'],
 	['_']	],
 
+	// blank: [
+	// ['_ '],
+	// ['ANSWER: ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ '],
+	// ['ANSWER: ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ '],
+	// ['ANSWER: ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ ']
+	// ['ANSWER: ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ ', ' _ '],
+	// ['ANSWER: ', '_ ']	],
+
 	pics: [
-	'<img src="./assets/images/hmmm.jpg"/>',
-	'<img src="./assets/images/astepUp.jpg"/>',
-	'<img src="./assets/images/bfirstSite.jpg"/>',
-	'<img src="./assets/images/cnooseOn.jpg"/>',
-	'<img src="./assets/images/dgrrk.jpg"/>',
 	'<img src="./assets/images/youLose.jpg"/>',
+	'<img src="./assets/images/dgrrk.jpg"/>',
+	'<img src="./assets/images/cnooseOn.jpg"/>',
+	'<img src="./assets/images/bfirstSite.jpg"/>',
+	'<img src="./assets/images/astepUp.jpg"/>',
+	'<img src="./assets/images/hmmm.jpg"/>',	
 	'<img src="./assets/images/youWin.jpg"/>',
 	'<img src="./assets/images/zsorry.jpg"/>',
 	'<img src="./assets/images/zWinner.jpg"/>',
@@ -37,7 +45,7 @@ var qs = {
 
 // guesses remaining =
 // wins and losses
-var remaining = 5;
+var remain = 5;
 var wins = 0;
 var losses = 0;
 var letGuessed = "_";
@@ -45,17 +53,72 @@ var letGuessed = "_";
 //function to initialize game
 function initialize() {
 	$('#question').html(qs.question[0]);
-	$('#answer').html(qs.answer[0]);
-	$('#graphic').html(qs.pics[0]);
-	$('#remaining').html(remaining);
+	$('#answer').html(qs.question[0]);
+	$('#graphic').html(qs.pics[5]);
+	$('#remaining').html(remain);
 	$('#guessed').html(letGuessed);
 	$('#wins').html(wins);
 	$('#losses').html(losses);
 
 }
 
-initialize();
+
 // function to start the game
+document.onkeyup = function() {
+    if(letGuessed === "_") {
+  	var j = 1;
+ 	$('#question').html(qs.question[j]);
+	$('#graphic').html(qs.pics[5]);
+	$("#answer").empty()
+	letGuessed = "Make your First Guess";
+	$('#guessed').html(letGuessed);
+
+//create a blank space for each letter of the answer
+		for (var i = 0; i < qs.answer[j].length; i++) {
+		var blankSpace = $("<div>_</div>");
+		blankSpace.attr("data-index", qs.answer[j]);
+		$("#answer").append(blankSpace);
+    	};
+	
+    }
+
+    else if (remain !=0) {
+	letGuessed = event.key.toUpperCase();
+    $('#guessed').html(letGuessed);
+    	var j = 1;
+    	var h = jQuery.inArray(letGuessed, qs.answer[j])
+    	if (h > -1) {
+    	alert("Good Guess")
+
+    	}
+    	else {
+    	alert("One Step Close to Death");
+    	remain--;
+    	$('#remaining').html(remain);
+    	$('#graphic').html(qs.pics[remain]);
+
+			if (remain === 0) {
+			losses++;
+			$('#losses').html(losses);
+			}
+
+    	}
+
+    	// if(remain = 0) {
+    	// 	alert("You Lose!!");
+    	// }
+
+	}
+
+
+
+
+};
+
+
+
+
+
 
 
 //funtion to play the next qustion
@@ -84,16 +147,11 @@ if(remaining = 0) {
 
  
 
-// listen for key click
-// 	if ??? is empty then initialize
-// 	if ??? is not empty then check key against answer
-// 		if key = one of the answers then display that character
-// 		if key != one of the answers then decrease quesses remaining
-// 	if guesses remaining = 0 then prompt to start again.
 
 
 
 
+initialize();
 
 
 });
