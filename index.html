@@ -9,11 +9,14 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
    <!--  link to bootstrap: -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--link to the javascript file -->
-    <script type="./assets/javascript/game.js"></script>
+	
+
+    
 </head>
 
 <body>
+
+
     <!-- //divs
 	//title
 	//question and answer / press any key
@@ -42,16 +45,16 @@
                 <div class="panel panel-default col-md-5">
                     <!-- question -->
                     <div class="panel-body" id="question">
-                        Question
+                        
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item" id="answer">_ _ _ _ _ _ _ _ _ _ _ _ </li>
+                        <li class="list-group-item" id="answer"></li>
                     </ul>
                 </div>
     <!-- Image panel/column -->
-                <aside id="graphic" class=" img-container col-md-7">
-                    <img src="./assets/images/hmmm.jpg">
+                <aside id="graphic" class="img-container thumbnail col-md-7">
+                    
                 </aside>
             </div>
    <!-- Bottom Row.  Remaining Guesses, Letter guessed, and wins and losses. -->
@@ -59,21 +62,21 @@
             	<!-- Remaining Guesses Panel -->
                 <div class="panel panel-default col-md-4">
                     <div class="panel-body">
-                        <p>Remaining Guesses: </p>
+                        <p>Fatal Mistakes Remaining: </p>
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item text-center" id="remaining">10</li>
+                        <li class="list-group-item text-center" id="remaining"></li>
                     </ul>
                 </div>
 				<!-- Letter Selected Panel -->
                 <div class="panel panel-default col-md-4">
                     <div class="panel-body">
-                        <p>Letter Guessed:</p>
+                        <p>Last Letter Guessed:</p>
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item text-center" id="Guessed">G</li>
+                        <li class="list-group-item text-center" id="guessed"></li>
                     </ul>
                 </div>
 
@@ -83,7 +86,7 @@
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item text-center" id="wins">0</li>
+                        <li class="list-group-item text-center" id="wins"></li>
                     </ul>
                 </div>
 
@@ -93,12 +96,17 @@
                     </div>
                     <!-- List group -->
                     <ul class="list-group">
-                        <li class="list-group-item text-center" id="losses">0</li>
+                        <li class="list-group-item text-center" id="losses"></li>
                     </ul>
                 </div>
 
             </div>
         </div>
+
+	<!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!-- my external javascript file -->
+    <script src="assets//javascript/game.js"></script>
 
 
 </body>
