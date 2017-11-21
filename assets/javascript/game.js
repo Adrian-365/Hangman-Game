@@ -119,6 +119,10 @@ document.onkeyup = function() {
 	    		//if h is 0 or greater, then the answer is right 
 	    		if (h > -1) {
 	    			alert("Good Guess");
+	    			blanksAndSuccesses[h] = letGuessed;
+	    			// console.log(blanksAndSuccesses);
+	    			$("#answer").empty();
+	    			$("#answer").append(blanksAndSuccesses);
 	    		
 	    		} 
 				//otherwise the answer is wrong
