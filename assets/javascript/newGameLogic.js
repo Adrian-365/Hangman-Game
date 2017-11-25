@@ -1,4 +1,5 @@
 //id's: question answer graphic remaining guessed wins losses 
+// *** need to somehow account for duplicate guesses??**
 //
 //BEGIN docuent.ready function
 $(document).ready(function() {
@@ -71,8 +72,8 @@ $(document).ready(function() {
 function initialize() {
 	$('#question').html(qs.question[j]);
 	$('#answer').html(qs.answer[j]);
-	$('#taunts').html(qs.taunts[remain]);
-	$('#graphic').html(qs.pics[remain]);
+	$('#taunts').html(qs.taunts[qs.taunts.length-4]);
+	$('#graphic').html(qs.pics[qs.pics.length-4]);
 	$('#remaining').html(remain);
 	$('#guessed').html(letGuessed);
 	$('#wins').html(wins);
@@ -115,10 +116,10 @@ function nextQ() {
 //ON CLICK: 
 document.onkeyup = function() {
 //		IS THE ROUND OVER? (remain === 0 || correctGuesses === qs.answer.length)
-if (remain === 0 || correctGuesses === qs.answer.length) {
+if (remain === 0 || correctGuesses === blanksAndSuccesses.length) {
 //			If YES, then:
 //				IS THE GAME OVER?
-	         if (losses + wins === qs.question.lenght-1) {
+	         if (losses + wins === qs.question.length-2) {
 //					If YES, then:
 						alert("Game`s over.  Use F5 or refresh to start again.")
 	} else {
@@ -137,9 +138,7 @@ letGuessed = event.key.toUpperCase();
 var h = jQuery.inArray(letGuessed, qs.answer[j]);//			If NO ,then:
 //				DOES THE LETTER MACTCH THE ANSWER?
 					if (h > -1) {
-//					IF YES, then
-						
-						alert("Good Guess");
+//					IF YES, then:
 						blanksAndSuccesses[h] = letGuessed;
 						// console.log(blanksAndSuccesses);
 						$("#answer").empty();
@@ -147,12 +146,13 @@ var h = jQuery.inArray(letGuessed, qs.answer[j]);//			If NO ,then:
 //						-Add the letter to the blank and the DOM
 						correctGuesses++;
 						console.log(correctGuesses);
+						alert("Good Guess");
 //							HAS THE WORD BEEN COMPLETED? 
 							if (correctGuesses === blanksAndSuccesses.length) {
 //								If YES, then:
-								alert("You Win!");
 								wins++;
 								$('#wins').html(wins);
+								alert("You Win!");
 									} 
 //								If NO, then:
 								} 
@@ -168,7 +168,8 @@ var h = jQuery.inArray(letGuessed, qs.answer[j]);//			If NO ,then:
 	    				losses++;
 						$('#losses').html(losses);
 						$('#question').html(qs.question[qs.question.length-1]) 
-						$("#answer").html('Hit any key to try the next question.  Or use F5 to reset.');
+						$("#answer").html('Hit any key to try the next question.');
+						alert('You lost this round, Amigo.')
 
 	    			}
 
