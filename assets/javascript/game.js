@@ -1,5 +1,37 @@
 //id's: question answer graphic remaining guessed wins losses 
 
+//ON CLICK: 
+//HAS THE GAME STARTED? (j >0)
+//	If YES, then:
+//		IS THE ROUND OVER? (remain === 0 || correctGuesses === qs.answer.length)
+//			If YES, then:
+//				IS THE GAME OVER?
+//					If YES, then:
+//						-alert game over.
+//					If NO, then:
+//						advace to the next round.
+//							-correctGuesses = 0;
+//							-remain = 5;
+//			If NO ,then:
+//				DOES THE LETTER MACTCH THE ANSWER?
+//					IF YES, then
+//						-Alert "good guess"
+//						-Add the letter to the blank and the DOM
+//						-correctGuesses++
+//							HAS THE WORD BEEN COMPLETED? (correctGuesses === qs.answer.length)
+//								If YES, then:
+//									-alert("You Win!");
+//									-Wins++;
+//								If NO, then:
+//					IF NO, then remain--
+//						ARE THE GUESSES USED UP? (remain === 0).
+//							If YES, then:
+//								-losses++;
+//							If NO, then:			
+//	If NO, then initialize();
+
+
+
  
 //BEGIN docuent.ready function
 $(document).ready(function() {
@@ -52,6 +84,7 @@ var qs = {
 // create some global variables
 //variable for remaining guesses
 var remain = 5;
+var correctGuesses = 0;
 var wins = 0;
 var losses = 0;
 //to capture and display the most recent letter guessed
@@ -78,6 +111,33 @@ function initialize() {
 	$('#losses').html(losses);
 }
 
+//function to go to Next Question:
+function nextQ() {
+	j++;
+	remain = 5;
+	$('#question').html(qs.question[j]);
+
+	$('#taunts').html(qs.taunts[remain]);
+	$('#graphic').html(qs.pics[remain]);
+	$('#remaining').html(remain);
+	$('#guessed').html("Make A Guess");
+	$('#wins').html(wins);
+	$('#losses').html(losses);
+
+
+		chosenWord = qs.answer[j];
+		lettersInWord = chosenWord.split('');
+		numBlanks = lettersInWord.length;
+		blanksAndSuccesses = [];
+		wrongGuesses = [];
+	//create a blank space for each letter of the answer
+		for (var i = 0; i < qs.answer[j].length; i++) {
+			blanksAndSuccesses.push('_ ');		
+    	};
+    	//append blanks to the DOM
+		$("#answer").append(blanksAndSuccesses);
+
+}
 
 
 
@@ -159,52 +219,6 @@ initialize();
 
    
 
-//     else if ((wins + losses) < (qs.question.length-2)) {
-
-//     }
-//   //if answer is wrong
-//     	else {
-//     	
-
-// 			if (remain === 0) {
-// 			losses++;
-// 			$('#losses').html(losses);
-// 			$('#question').html(qs.question[qs.question.length-1]) 
-// 			$("#answer").html('Hit any key to try the next question.  Or use F5 to reset.');
-			// }
-
-   //  	}
-
-  
-	// else {
-	// 	// j++;
-	// ('#question').html(qs.question[j]);
-	// $('#answer').html(qs.question[j]);
-	// $('#graphic').html(qs.pics[5]);
-	// $('#remaining').html(remain);
-	// $('#guessed').html(letGuessed);
-	// $('#wins').html(wins);
-	// $('#losses').html(losses);
-
-	// }
-
-
-
-
-
-
-
-
-
-
-
-
-//funtion to play the next qustion
-//function to start all over after max win or max loss, reset initialize
-
-
-
-// If guesses remaining = 0 then you lose.
 
 
 
