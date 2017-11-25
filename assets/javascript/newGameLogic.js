@@ -9,17 +9,17 @@ $(document).ready(function() {
 		question: [
 		'Press Any Key to Play!', 
 		'Q: In which country were the "Spaghetti Western" films created?',
-		'Q: In 1966`s "Django" directed by Sergio Corbucci, where does Django keep his guns?',
+		'Q: Name the 1966 film directed by Sergio Corbucci in which the main character keeps his guns in a coffin:',
 		'Q: In "For a Few Dollars More" Lee Van Cleef`s character was known as The Man In: ____?',
-		'Q: To this day, who is the biggest bad-ass actor in the Sphagetti Western world?',
+		'Q: What is the first name of the most famous actor in the Sphagetti Western world?',
 		'You Lost, hombre. Wanna go again?'	],
 	
 		answer: [
 		'Press Any Key to Play!',
 		'ITALY',
-		'COFFIN',
+		'DJANGO',
 		'BLACK',
-		'EASTWOOD',
+		'CLINT',
 		'You Lost, hombre. Wanna go again?'	],
 	
 	
@@ -146,7 +146,7 @@ var h = jQuery.inArray(letGuessed, qs.answer[j]);//			If NO ,then:
 //						-Add the letter to the blank and the DOM
 						correctGuesses++;
 						console.log(correctGuesses);
-						alert("Good Guess");
+						// alert("Good Guess");
 //							HAS THE WORD BEEN COMPLETED? 
 							if (correctGuesses === blanksAndSuccesses.length) {
 //								If YES, then:
@@ -158,18 +158,18 @@ var h = jQuery.inArray(letGuessed, qs.answer[j]);//			If NO ,then:
 								} 
 				//otherwise the answer is wrong
 	    		else {
-	    			alert("One Step Close to Death");
 	    			remain--;
 	    			$('#remaining').html(remain);
 	    			$('#graphic').html(qs.pics[remain]);
-	    			$('#taunts').html(qs.taunts[remain]);
+					$('#taunts').html(qs.taunts[remain]);
+					alert(qs.taunts[remain]);
 
 	    			if (remain === 0) {
 	    				losses++;
 						$('#losses').html(losses);
 						$('#question').html(qs.question[qs.question.length-1]) 
 						$("#answer").html('Hit any key to try the next question.');
-						alert('You lost this round, Amigo.')
+						alert('You lost this round!')
 
 	    			}
 
